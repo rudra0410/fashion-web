@@ -66,9 +66,6 @@ const Header = ({ isLoggedIn, logout }) => {
         <li className={location.pathname === '/products' ? 'active' : ''}>
           <Link to="/products">Shop</Link>
         </li>
-        <li className={location.pathname.includes('/category') ? 'active' : ''}>
-          <Link to="/categories">Categories</Link>
-        </li>
         <li>
           <Link to="/cart" className="cart-link">
             <FaShoppingCart />
