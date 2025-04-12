@@ -1,0 +1,215 @@
+/* Category Bar Styles */
+.category-bar {
+  background-color: var(--background-light);
+  padding: 0;
+  box-shadow: var(--shadow-small);
+  position: fixed;
+  top: 70px; /* Position below the 70px header */
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: 50px; /* Fixed height */
+  display: flex;
+  align-items: center;
+}
+
+.category-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.categories {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  padding: 5px 0;
+  width: 100%;
+}
+
+.categories::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.category-item {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: var(--border-radius-small);
+  transition: all var(--transition-medium);
+  white-space: nowrap;
+}
+
+.category-item:hover {
+  background-color: rgba(154, 82, 255, 0.1);
+  color: var(--purple-main);
+}
+
+.category-item.active {
+  background-color: var(--purple-main);
+  color: white;
+}
+
+.search-container {
+  position: relative;
+  min-width: 200px;
+}
+
+.search-container form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border-radius: var(--border-radius-small);
+  border: 1px solid #ddd;
+  background-color: white;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  width: 100%;
+  transition: all var(--transition-medium);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--purple-main);
+  box-shadow: 0 0 3px rgba(154, 82, 255, 0.3);
+}
+
+.search-button {
+  background: none;
+  border: none;
+  color: var(--purple-main);
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon {
+  font-size: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .category-bar-container {
+    flex-direction: row;
+    gap: 15px;
+    padding: 0 20px;
+  }
+  
+  .categories {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .search-container {
+    width: 200px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-bar {
+    top: var(--header-height-mobile, 60px);
+    position: fixed;
+    height: 45px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    transition: top 0.3s ease;
+  }
+  
+  /* Add scroll behavior to handle stickiness */
+  .category-bar.sticky {
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    animation: slideDown 0.3s ease;
+    width: 100%;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .category-bar-container {
+    padding: 0 10px;
+  }
+  
+  .categories {
+    gap: 8px;
+    padding: 5px 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .category-item {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  .category-item.active {
+    background-color: var(--secondary-color);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-container {
+    display: none; /* Hide search on mobile as it's in the header */
+  }
+}
+
+@media (max-width: 576px) {
+  .category-bar {
+    padding: 0;
+    height: 40px;
+  }
+  
+  .category-item {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+  
+  /* Create a fading edge effect to indicate more content */
+  .category-bar-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, white);
+    pointer-events: none;
+  }
+}

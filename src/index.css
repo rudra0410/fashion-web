@@ -1,0 +1,179 @@
+/* Global CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Premium Color Palette */
+  --primary-color: #1a1a2e; /* Dark Navy */
+  --background-dark: #16213e; /* Darker Navy */
+  --secondary-color: #e63946; /* Fashion Red */
+  --accent-color: #ff9a8b; /* Coral Pink */
+  --text-light: #f5f5f5;
+  --text-dark: #333333;
+  --text-medium: #888888;
+  --background-light: #f9f9f9;
+  --border-color: #e8e8e8;
+  
+  /* UI Variables */
+  --border-radius: 6px;
+  --box-shadow: 0 4px 15px rgba(26, 26, 46, 0.15);
+  --content-width-desktop: 1400px;
+  --content-width-tablet: 90%;
+  --content-width-mobile: 95%;
+  --header-height-mobile: 60px;
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Other theme colors derived from main palette */
+  --success-color: #4cd964;
+  --warning-color: #ff9500;
+  --error-color: #ff3b30;
+  --info-color: #5ac8fa;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Global button styles */
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: #d83240; /* Slightly darker red */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
+}
+
+/* Secondary button */
+.btn-secondary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: #25253b; /* Slightly lighter navy */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.2);
+}
+
+/* Ghost/outline button */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 9px 19px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.btn-ghost:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.1);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container for consistent spacing */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility classes */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form styles */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 576px) {
+  /* Small devices */
+}
+
+@media (min-width: 768px) {
+  /* Medium devices */
+}
+
+@media (min-width: 992px) {
+  /* Large devices */
+}
+
+@media (min-width: 1200px) {
+  /* Extra large devices */
+}
