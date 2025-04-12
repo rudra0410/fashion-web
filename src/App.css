@@ -64,7 +64,7 @@
 
 @media (max-width: 768px) {
   .products-page-content {
-    margin-top: 45px; /* Adjusted for only the category bar (45px) since it's sticky */
+    margin-top: 105px; /* Adjusted for mobile header (60px) and category bar (45px) */
     padding-top: 10px;
   }
   
@@ -75,7 +75,7 @@
 
 @media (max-width: 576px) {
   .products-page-content {
-    margin-top: 100px; /* Further adjusted for smaller screens */
+    margin-top: 100px; /* Slightly adjusted for smaller screens */
   }
 }
 

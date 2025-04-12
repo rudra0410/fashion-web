@@ -14,11 +14,9 @@ const CategoryBar = ({ onSearch }) => {
   // Track scroll position to make category bar sticky
   useEffect(() => {
     const handleScroll = () => {
-      const headerHeight = window.innerWidth <= 768 ? 0 : 70;
+      const headerHeight = window.innerWidth <= 768 ? 60 : 70; // Mobile header is 60px
       
       if (categoryBarRef.current) {
-        const categoryBarTop = categoryBarRef.current.getBoundingClientRect().top;
-        
         if (window.scrollY > headerHeight && window.innerWidth <= 768) {
           setIsSticky(true);
         } else {
